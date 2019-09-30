@@ -1,4 +1,4 @@
-{% set version = '1.0.2' %}
+{% set version = '1.0.3' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/xmlparsedata_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/xmlparsedata/xmlparsedata_{{ version }}.tar.gz
-  sha256: 50b2cca032a4986d8b603a282847c50f7571c76284a9b0a229938c969e25eeda
+  sha256: 505350f8ff238de78dc96bd32a9a2972e6a055224664c8a839e2b6f20b1d593e
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -23,7 +22,7 @@ build:
 
 requirements:
   build:
-
+    - {{posix}}zip               # [win]
   host:
     - r-base
   run:
@@ -40,14 +39,30 @@ about:
   summary: Convert the output of 'utils::getParseData()' to an 'XML' tree, that one can search
     via 'XPath', and easier to manipulate in general.
   license_family: MIT
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - LICENSE
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
     - russHyde
+
+# Package: xmlparsedata
+# Title: Parse Data of 'R' Code as an 'XML' Tree
+# Version: 1.0.3
+# Author: Gabor Csardi
+# Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
+# Description: Convert the output of 'utils::getParseData()' to an 'XML' tree, that one can search via 'XPath', and easier to manipulate in general.
+# License: MIT + file LICENSE
+# LazyData: true
+# URL: https://github.com/r-lib/xmlparsedata#readme
+# BugReports: https://github.com/r-lib/xmlparsedata/issues
+# RoxygenNote: 6.0.1
+# Suggests: covr, testthat, xml2
+# Depends: R (>= 3.0.0)
+# Encoding: UTF-8
+# NeedsCompilation: no
+# Packaged: 2019-09-27 11:26:57 UTC; gaborcsardi
+# Repository: CRAN
+# Date/Publication: 2019-09-27 11:40:02 UTC

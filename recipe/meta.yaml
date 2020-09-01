@@ -1,4 +1,4 @@
-{% set version = '1.0.3' %}
+{% set version = "1.0.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/xmlparsedata_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/xmlparsedata/xmlparsedata_{{ version }}.tar.gz
-  sha256: 505350f8ff238de78dc96bd32a9a2972e6a055224664c8a839e2b6f20b1d593e
+  sha256: 387b13c25bea9ddc0a39b817c17c199b86ab9acafa328daae2233a9ca577fb9c
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -36,11 +36,10 @@ test:
 about:
   home: https://github.com/r-lib/xmlparsedata#readme
   license: MIT
-  summary: Convert the output of 'utils::getParseData()' to an 'XML' tree, that one can search
-    via 'XPath', and easier to manipulate in general.
+  summary: Convert the output of 'utils::getParseData()' to an 'XML' tree, that one can search via 'XPath', and easier to manipulate in general.
   license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
 extra:

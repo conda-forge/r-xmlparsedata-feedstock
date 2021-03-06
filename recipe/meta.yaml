@@ -1,4 +1,4 @@
-{% set version = "1.0.4" %}
+{% set version = "1.0.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/xmlparsedata_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/xmlparsedata/xmlparsedata_{{ version }}.tar.gz
-  sha256: 387b13c25bea9ddc0a39b817c17c199b86ab9acafa328daae2233a9ca577fb9c
+  sha256: 766034ab5e9728609bd240c9954d23ca0cdb881a98a31b9d3e1c8767c7b7cbb0
 
 build:
   merge_build_host: true  # [win]

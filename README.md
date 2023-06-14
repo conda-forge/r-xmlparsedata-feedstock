@@ -1,11 +1,11 @@
-About r-xmlparsedata
-====================
+About r-xmlparsedata-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-xmlparsedata-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/r-lib/xmlparsedata#readme
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-xmlparsedata-feedstock/blob/main/LICENSE.txt)
 
 Summary: Convert the output of 'utils::getParseData()' to an 'XML' tree, that one can search via 'XPath', and easier to manipulate in general.
 
